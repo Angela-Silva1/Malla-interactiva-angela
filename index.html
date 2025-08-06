@@ -1,11 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Malla Curricular</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Interactiva - Ingeniería Civil Industrial</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>¡Hola Catalina! 🎉</h1>
-    <p>Bienvenida a tu primera página en GitHub Pages.</p>
-</body>
-</html>
+  <h1 class="titulo">Malla Interactiva 💗 Ingeniería Civil Industrial</h1>
+
+  <div class="malla">
+    <!-- PRIMER AÑO -->
+    <div class="semestre">
+      <h2>1° Semestre</h2>
+      <div class="ramo disponible" data-creditos="8" data-prerrequisitos="">Fundamentos de Matemática</div>
+      <div class="ramo disponible" data-creditos="8" data-prerrequisitos="">Álgebra</div>
+      <div class="ramo disponible" data-creditos="5" data-prerrequisitos="">Introducción a la Ingeniería Industrial</div>
+      <div class="ramo disponible" data-creditos="5" data-prerrequisitos="">Informática I</div>
+      <div class="ramo disponible" data-creditos="4" data-prerrequisitos="">Desarrollo Personal I</div>
+    </div>
+    <div class="semestre">
+      <h2>2° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="8" data-prerrequisitos="Fundamentos de Matemática, Álgebra">Cálculo Diferencial</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Álgebra">Álgebra Lineal</div>
+      <div class="ramo disponible" data-creditos="6" data-prerrequisitos="">Fundamentos de Física</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Introducción a la Ingeniería Industrial">Mundo Contemporáneo y Desafíos de la Ingeniería</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Desarrollo Personal I">Desarrollo Personal II</div>
+      <div class="ramo disponible" data-creditos="2" data-prerrequisitos="">Idioma I</div>
+    </div>
+
+    <!-- SEGUNDO AÑO -->
+    <div class="semestre">
+      <h2>3° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="8" data-prerrequisitos="Cálculo Diferencial">Cálculo Integral y Series</div>
+      <div class="ramo disponible" data-creditos="4" data-prerrequisitos="">Química General</div>
+      <div class="ramo bloqueado" data-creditos="7" data-prerrequisitos="Cálculo Diferencial, Fundamentos de Física">Física Mecánica</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Mundo Contemporáneo y Desafíos de la Ingeniería, Idioma I">Administración y Sistemas Organizacionales</div>
+      <div class="ramo bloqueado" data-creditos="3" data-prerrequisitos="Introducción a la Ingeniería Industrial, Desarrollo Personal II">Taller de Creatividad y Emprendimiento</div>
+      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="Idioma I">Idioma II</div>
+    </div>
+    <div class="semestre">
+      <h2>4° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="8" data-prerrequisitos="Álgebra Lineal, Cálculo Integral y Series">Cálculo en Varias Variables</div>
+      <div class="ramo bloqueado" data-creditos="8" data-prerrequisitos="Álgebra Lineal, Cálculo Integral y Series">Ecuaciones Diferenciales</div>
+      <div class="ramo bloqueado" data-creditos="7" data-prerrequisitos="Cálculo Integral y Series, Física Mecánica">Física Calor, Ondas y Óptica</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Informática I, Álgebra Lineal">Informática II</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Idioma II">Idioma III</div>
+    </div>
+
+    <!-- TERCER AÑO -->
+    <div class="semestre">
+      <h2>5° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Cálculo en Varias Variables">Estadísticas y Probabilidades</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Administración y Sistemas Organizacionales, Fundamentos de Matemática">Contabilidad Financiera</div>
+      <div class="ramo bloqueado" data-creditos="7" data-prerrequisitos="Cálculo en Varias Variables, Física Mecánica">Física Electromagnetismo</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Física Mecánica, Física Calor, Ondas y Óptica">Ciencia y Tecnología de los Materiales</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Hasta 3° semestre aprobado">Taller de Integración de Ingeniería Industrial I</div>
+      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="Desarrollo Personal II">Taller de Integración perfil sello UV I</div>
+    </div>
+    <div class="semestre">
+      <h2>6° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Estadísticas y Probabilidades">Inferencia Estadística</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Contabilidad Financiera">Costos y Presupuestos</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Química General, Física Calor, Ondas y Óptica">Termodinámica de Procesos</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Informática II, Administración y Sistemas Organizacionales, Idioma III">Sistemas de Información y Bases de Datos</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Cálculo Integral y Series, Administración y Sistemas Organizacionales">Microeconomía</div>
+      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="TIPE I">Taller de Integración perfil sello UV II</div>
+    </div>
+
+    <!-- CUARTO AÑO -->
+    <div class="semestre">
+      <h2>7° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Álgebra Lineal, Informática II, Inferencia Estadística">Modelamiento</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Costos y Presupuestos, Microeconomía">Análisis y Estrategia de Negocios</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Termodinámica de Procesos">Mecánica de Fluidos</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Sistemas de Información y Bases de Datos">Tecnologías de Información e Inteligencia de Negocios</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Microeconomía, Contabilidad Financiera">Macroeconomía</div>
+      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="TIPE II">Taller de Integración perfil sello UV III</div>
+    </div>
+
+    <div class="semestre">
+      <h2>8° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Modelamiento">Investigación de Operaciones</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Costos y Presupuestos, Modelamiento">Gestión de Operaciones I</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Análisis y Estrategia de Negocios">Marco Legal de las Organizaciones</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Física Electromagnetismo, Termodinámica de Procesos">Procesos Industriales</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Taller de Creatividad y Emprendimiento, Tecnologías de Información e Inteligencia de Negocios">Gestión de la Innovación</div>
+      <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Hasta 5° semestre aprobado">Taller de Integración de Ingeniería Industrial II</div>
+    </div>
+
+    <!-- QUINTO AÑO -->
+    <div class="semestre">
+      <h2>9° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Procesos Industriales, Marco Legal de las Organizaciones">Gestión de Riesgos</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Gestión de Operaciones I, Investigación de Operaciones">Gestión de Operaciones II</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Marco Legal de las Organizaciones">Gestión de Recursos Humanos</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Procesos Industriales">Automatización y Control de Procesos</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Microeconomía, Análisis y Estrategia de Negocios">Finanzas I</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Análisis y Estrategia de Negocios, Tecnologías de Información e Inteligencia de Negocios, Macroeconomía">Marketing Estratégico</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="220 créditos + Práctica I">Electivo I</div>
+    </div>
+
+    <div class="semestre">
+      <h2>10° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Finanzas I, Marketing Estratégico">Dirección Estratégica</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Finanzas I, Marketing Estratégico">Evaluación y Gestión de Proyectos y Programas</div>
+      <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Automatización y Control de Procesos">Gestión Energética</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Finanzas I">Finanzas II</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Electivo I">Electivo II</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Electivo I">Electivo III</div>
+    </div>
+
+    <!-- SEXTO AÑO -->
+    <div class="semestre">
+      <h2>11° Semestre</h2>
+      <div class="ramo bloqueado" data-creditos="25" data-prerrequisitos="309 créditos + Práctica II">Taller de Integración de Ingeniería Industrial III</div>
+      <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Electivo II, Electivo III">Electivo IV</div>
+    </div>
+
+    <!-- PRÁCTICAS -->
+    <div class="semestre">
+      <h2>Prácticas</h2>
+      <div class="ramo disponible" data-creditos="9" data-prerrequisitos="Hasta 4° semestre aprobado">Práctica I</div>
+      <div class="ramo bloqueado" data-creditos="12" data-prerrequisitos="270 créditos + Práctica I">Práctica II</div>
+    </div>
