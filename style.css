@@ -1,0 +1,97 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f6;
+  margin: 0;
+  padding: 2rem;
+  color: #660033;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  color: #d63384;
+  margin-bottom: 2rem;
+}
+
+.malla {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+
+.semestre {
+  background-color: #ffe6f0;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid #d63384;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.semestre h2 {
+  font-size: 1.2rem;
+  color: #a61e4d;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ramo {
+  background-color: #ffd6eb;
+  border: 1px solid #cc6699;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.ramo:hover {
+  background-color: #fcbad3;
+}
+
+.ramo.bloqueado {
+  background-color: #e0e0e0;
+  border: 1px dashed #999;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.ramo.aprobado {
+  background-color: #f5b7c8;
+  color: #8a1644;
+  text-decoration: line-through;
+  border: 2px solid #8a1644;
+}
+
+.credito-info {
+  font-size: 0.8rem;
+  color: #444;
+  margin-top: 0.25rem;
+}
+
+/* Tooltip */
+.ramo[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #fff;
+  color: #333;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  white-space: pre-line;
+  z-index: 10;
+  font-size: 0.8rem;
+  width: 200px;
+  transform: translateY(-1.5rem);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1000px) {
+  .malla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
