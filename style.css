@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fff9fb;
+  background-color: #ffd6eb;
   margin: 0;
   padding: 2rem;
   color: #660033;
@@ -38,7 +38,7 @@ body {
 }
 
 .ramo {
-  background-color: #fff9fb;
+  background-color: #ffd6eb;
   border: 1px solid #cc6699;
   border-radius: 0.75rem;
   padding: 0.5rem;
