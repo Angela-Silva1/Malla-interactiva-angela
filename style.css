@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fff0f6;
+  background-color: #fff9fb;
   margin: 0;
   padding: 2rem;
   color: #660033;
@@ -21,7 +21,7 @@ body {
 }
 
 .semestre {
-  background-color: #ffe6f0;
+  background-color: #fff9fb;
   padding: 1rem;
   border-radius: 1rem;
   border: 2px solid #d63384;
@@ -38,7 +38,7 @@ body {
 }
 
 .ramo {
-  background-color: #ffd6eb;
+  background-color: #fff9fb;
   border: 1px solid #cc6699;
   border-radius: 0.75rem;
   padding: 0.5rem;
