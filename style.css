@@ -95,3 +95,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.malla-tooltip {
+  pointer-events: none;
+}
+
+.contador-creditos {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #660033;
+}
