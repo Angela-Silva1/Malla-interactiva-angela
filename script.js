@@ -1,81 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ramos = document.querySelectorAll(".ramo");
 
-  // Marcar/desmarcar un ramo y verificar desbloqueos
-  ramos.forEach(ramo => {
-    ramo.addEventListener("click", () => {
-      if (ramo.classList.contains("disponible")) {
-        ramo.classList.toggle("aprobado");
-        actualizarDisponibilidad();
-      }
-    });
-  });
-
-  function actualizarDisponibilidad() {
-    const aprobados = Array.from(document.querySelectorAll(".ramo.aprobado")).map(r => r.textContent.trim());
-    const creditosAprobados = calcularCreditos(aprobados);
-
-    ramos.forEach(ramo => {
-      if (!ramo.classList.contains("aprobado")) {
-        const requisitos = ramo.getAttribute("data-prerrequisitos").split(",").map(r => r.trim()).filter(r => r);
-        if (requisitos.length === 0) {
-          ramo.classList.add("disponible");
-          ramo.classList.remove("bloqueado");
-        } else {
-          if (cumpleRequisitos(requisitos, aprobados, creditosAprobados)) {
-            ramo.classList.add("disponible");
-            ramo.classList.remove("bloqueado");
-          } else {
-            ramo.classList.add("bloqueado");
-            ramo.classList.remove("disponible");
-          }
-        }
-      }
-    });
+  function contarCreditosCursados() {
+    return Array.from(ramos)
+      .filter(r => r.classList.contains("cursado"))
+      .reduce((total, r) => total + parseInt(r.dataset.creditos), 0);
   }
 
-  function calcularCreditos(listaAprobados) {
-    let total = 0;
-    listaAprobados.forEach(nombre => {
-      const ramoEl = Array.from(ramos).find(r => r.textContent.trim() === nombre);
-      if (ramoEl) {
-        total += parseInt(ramoEl.getAttribute("data-creditos")) || 0;
-      }
-    });
-    return total;
-  }
-
-  function cumpleRequisitos(requisitos, aprobados, creditos) {
-    return requisitos.every(req => {
-      // Caso: hasta X semestre aprobado
-      const matchSemestre = req.match(/Hasta (\d+)° semestre aprobado/i);
-      if (matchSemestre) {
-        const limite = parseInt(matchSemestre[1]);
-        return todosRamosHastaSemestre(limite, aprobados);
-      }
-
-      // Caso: créditos + ramo específico
-      const matchCreditos = req.match(/(\d+)\s*créditos/i);
-      if (matchCreditos) {
-        const minCreditos = parseInt(matchCreditos[1]);
-        return creditos >= minCreditos || aprobados.includes(req.replace(matchCreditos[0], "").replace("+", "").trim());
-      }
-
-      // Caso normal: requisito es un ramo por nombre
-      return aprobados.includes(req);
-    });
-  }
-
-  function todosRamosHastaSemestre(numSem, aprobados) {
+  function semestreAprobado(n) {
+    // Devuelve true si todos los ramos hasta ese semestre están cursados
     const semestres = document.querySelectorAll(".semestre");
-    for (let i = 0; i < numSem; i++) {
+    for (let i = 0; i < semestres.length; i++) {
+      if (i + 1 > n) break;
       const ramosSem = semestres[i].querySelectorAll(".ramo");
-      for (let r of ramosSem) {
-        if (!aprobados.includes(r.textContent.trim())) {
+      for (let ramo of ramosSem) {
+        if (!ramo.classList.contains("cursado") && !ramo.parentElement.querySelector("h2").textContent.includes("Prácticas")) {
           return false;
         }
       }
     }
     return true;
   }
+
+  function actualizarDisponibilidad() {
+    const creditos = contarCreditosCursados();
+    ramos.forEach(ramo => {
+      if (ramo.classList.contains("cursado")) return;
+
+      const prereqs = ramo.dataset.prerrequisitos.split(",").map(p => p.trim()).filter(p => p);
+      let desbloquear = true;
+
+      for (let p of prereqs) {
+        if (p.match(/(\d+)\s*créditos/i)) {
+          const reqCreditos = parseInt(p);
+          if (creditos < reqCreditos) desbloquear = false;
+        } else if (p.match(/Hasta\s+(\d+)[°º]\s+semestre\s+aprobado/i)) {
+          const reqSem = parseInt(p.match(/(\d+)/)[0]);
+          if (!semestreAprobado(reqSem)) desbloquear = false;
+        } else if (p !== "" && !Array.from(ramos).find(r => r.textContent.trim() === p && r.classList.contains("cursado"))) {
+          desbloquear = false;
+        }
+      }
+
+      ramo.classList.remove("bloqueado", "disponible");
+      ramo.classList.add(desbloquear ? "disponible" : "bloqueado");
+    });
+  }
+
+  // Añadir tooltip
+  ramos.forEach(ramo => {
+    const tooltip = document.createElement("span");
+    tooltip.className = "tooltip";
+    tooltip.textContent = `Créditos: ${ramo.dataset.creditos}\nPrerrequisitos: ${ramo.dataset.prerrequisitos || "Ninguno"}`;
+    ramo.appendChild(tooltip);
+
+    ramo.addEventListener("click", () => {
+      if (!ramo.classList.contains("disponible") && !ramo.classList.contains("cursado")) return;
+      ramo.classList.toggle("cursado");
+      actualizarDisponibilidad();
+    });
+  });
+
+  actualizarDisponibilidad();
 });
