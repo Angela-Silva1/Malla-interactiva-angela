@@ -225,4 +225,3 @@ document.addEventListener("DOMContentLoaded", () => {
     listNames: () => nameList.map(x => ({name: x.name, norm: x.nameNorm, prereq: x.rawPrereq}))
   };
 });
-
