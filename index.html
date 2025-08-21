@@ -5,19 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Malla Interactiva - Ingeniería Civil Industrial</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* --- Ajuste de separación entre columnas --- */
-    .malla { 
-      display: flex;
-      gap: 40px; /* separa columnas */
-      justify-content: center;
-      flex-wrap: wrap; /* para que no se corte en pantallas pequeñas */
-    }
-    .semestre {
-      flex: 1;
-      min-width: 180px; /* evita que se aplasten */
-    }
-  </style>
 </head>
 <body>
   <h1 class="titulo">Malla Interactiva 💗 Ingeniería Civil Industrial</h1>
@@ -32,7 +19,6 @@
       <div class="ramo disponible" data-creditos="5" data-prerrequisitos="">Informática I</div>
       <div class="ramo disponible" data-creditos="4" data-prerrequisitos="">Desarrollo Personal I</div>
     </div>
-
     <div class="semestre">
       <h2>2° Semestre</h2>
       <div class="ramo bloqueado" data-creditos="8" data-prerrequisitos="Fundamentos de Matemática, Álgebra">Cálculo Diferencial</div>
@@ -53,7 +39,6 @@
       <div class="ramo bloqueado" data-creditos="3" data-prerrequisitos="Introducción a la Ingeniería Industrial, Desarrollo Personal II">Taller de Creatividad y Emprendimiento</div>
       <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="Idioma I">Idioma II</div>
     </div>
-
     <div class="semestre">
       <h2>4° Semestre</h2>
       <div class="ramo bloqueado" data-creditos="8" data-prerrequisitos="Álgebra Lineal, Cálculo Integral y Series">Cálculo en Varias Variables</div>
@@ -73,7 +58,6 @@
       <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Hasta 3° semestre aprobado">Taller de Integración de Ingeniería Industrial I</div>
       <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="Desarrollo Personal II">Taller de Integración perfil sello UV I</div>
     </div>
-
     <div class="semestre">
       <h2>6° Semestre</h2>
       <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Estadísticas y Probabilidades">Inferencia Estadística</div>
@@ -81,7 +65,7 @@
       <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Química General, Física Calor, Ondas y Óptica">Termodinámica de Procesos</div>
       <div class="ramo bloqueado" data-creditos="6" data-prerrequisitos="Informática II, Administración y Sistemas Organizacionales, Idioma III">Sistemas de Información y Bases de Datos</div>
       <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Cálculo Integral y Series, Administración y Sistemas Organizacionales">Microeconomía</div>
-      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="Taller de Integración perfil sello UV I">Taller de Integración perfil sello UV II</div>
+      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="TIPE I">Taller de Integración perfil sello UV II</div>
     </div>
 
     <!-- CUARTO AÑO -->
@@ -92,7 +76,7 @@
       <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Termodinámica de Procesos">Mecánica de Fluidos</div>
       <div class="ramo bloqueado" data-creditos="5" data-prerrequisitos="Sistemas de Información y Bases de Datos">Tecnologías de Información e Inteligencia de Negocios</div>
       <div class="ramo bloqueado" data-creditos="4" data-prerrequisitos="Microeconomía, Contabilidad Financiera">Macroeconomía</div>
-      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="Taller de Integración perfil sello UV II">Taller de Integración perfil sello UV III</div>
+      <div class="ramo bloqueado" data-creditos="2" data-prerrequisitos="TIPE II">Taller de Integración perfil sello UV III</div>
     </div>
 
     <div class="semestre">
@@ -140,9 +124,8 @@
       <div class="ramo disponible" data-creditos="9" data-prerrequisitos="Hasta 4° semestre aprobado">Práctica I</div>
       <div class="ramo bloqueado" data-creditos="12" data-prerrequisitos="270 créditos + Práctica I">Práctica II</div>
     </div>
-  </div>
-  
-  <script src="script.js"></script>
+    
+<script src="script.js"></script>
 </body>
 </html>
 
